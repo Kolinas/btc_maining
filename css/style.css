@@ -1,0 +1,70 @@
+.btn {
+    width: 150px;
+    height: 50px;
+    background-color: green;
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  button:hover {
+    transform: scale(0.95);
+  }
+  
+  #btn2 {
+   background-color: red;
+  }
+  
+  #btn3 {
+   background-color: red;
+  }
+  
+  .promotion__timer {
+      width: 50%
+  }
+  .promotion__timer .title {
+      text-align: right
+  }
+  .promotion__timer .timer {
+  /* 	margin-top: 60px; */
+      display: flex;
+      align-items: center
+  }
+  .promotion__timer .timer__block {
+      width: 102px;
+      height: 120px;
+      background: #fff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, .25);
+      font-size: 16px;
+      font-weight: 300;
+      text-align: center
+  }
+  .promotion__timer .timer__block span {
+      display: block;
+      margin-top: 20px;
+      margin-bottom: 5px;
+      font-size: 56px;
+      font-weight: 700
+  }
+  
+  .status_block {
+    display: flex;
+    justify-content: flex-end;
+  /*   margin-left: 250px; */
+  }
+  
+  .status_block span { 
+   background-color: #d4a12c;
+   color: brown;
+  } 
+  
+  .intro {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .intro div {
+    color: red;
+  } 
