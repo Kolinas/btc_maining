@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       maining() {
         dataBase.allBTC += dataBase.incomingBTC;
-        counterBTC.innerHTML = `${dataBase.allBTC}`;
+        counterBTC.innerHTML = `${dataBase.allBTC.toFixed(1)}`;
         incomingState.innerHTML = `${dataBase.incomingBTC}`
         renderUpgrade(upgrades)
       },
