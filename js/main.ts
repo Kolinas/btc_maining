@@ -39,10 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let getTimer:number;
 
     const upgrades:Upgrade[] = [
-        {id: 1, name: 'Улучшить оперативную память', price: 3, incoming: 5, textUpd:'Память улучшена'},
-        {id: 2, name: 'Обновить винду', price: 2, incoming: 2, textUpd:'Винда обновлена до 10 версии'},
-        {id: 3, name: 'Установить двойное охлаждение', price: 10, incoming: 2, textUpd:'Установлено 2 кулера'},
-        {id: 4, name: 'Разогнать процессор', price: 5, incoming: 2, textUpd:'Процессор разогнан на 10%'},
+        {id: 1, name: 'Улучшить оперативную память', price: 3, incoming: 0.5, textUpd:'Память улучшена'},
+        {id: 2, name: 'Обновить винду', price: 2, incoming: 0.1, textUpd:'Винда обновлена до 10 версии'},
+        {id: 3, name: 'Установить двойное охлаждение', price: 10, incoming: 0.2, textUpd:'Установлено 2 кулера'},
+        {id: 4, name: 'Разогнать процессор', price: 5, incoming: 0.2, textUpd:'Процессор разогнан на 10%'},
       ]
 
     const dataBase: BTCState = {
