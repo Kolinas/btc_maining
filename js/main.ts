@@ -142,6 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (newBTC.scoreBTC !== dataBase.allBTC) {
         dataBase.allBTC -= price
         dataBase.incomingBTC += incoming
+        dataBase.maining()
         createListUpd(textUpd, curentUpdates)
         textMessage('Удачная покупка', 'green')
     }
