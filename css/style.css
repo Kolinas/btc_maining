@@ -30,6 +30,21 @@ button:hover {
   justify-content: center;
 }
 
+.player-inform {
+  display: flex;
+  margin-top: 50px;
+  justify-content: space-between;
+}
+
+.player-confirm{
+  margin-right: 105px;
+  margin-right: 105px;
+  border: none;
+  padding: 5px 10px;
+  background-color: rgb(237 95 85);
+  border-radius: 10px;
+  color: aliceblue;
+}
 
 .promotion__timer .title {
   text-align: right
@@ -93,7 +108,7 @@ button:hover {
 .upgrades_list {
   display: flex;
   justify-content: space-between;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .buy-btn{

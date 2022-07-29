@@ -32,11 +32,38 @@ document.addEventListener('DOMContentLoaded', () => {
         btnModal = document.querySelector('#infbtn') as Element,
         upgradeList = document.querySelector('[updates]') as HTMLSelectElement,
         buyUpgrade = document.querySelector('#buy-upgrade') as HTMLButtonElement,
-        curentUpdates = document.querySelector('#upgrades_information') as Element;
+        curentUpdates = document.querySelector('#upgrades_information') as Element,
+        playerBlock:HTMLDivElement = document.querySelector('.player-inform'),
+        playerName:HTMLSpanElement = document.querySelector("#player"),
+        setName:HTMLInputElement = document.querySelector('#name'),
+        confirmName:HTMLButtonElement = document.querySelector('#confirm');
 
 
     let getMaining:number;
     let getTimer:number;
+  
+    const toggleBtnEnabled = (btn:HTMLButtonElement, param:boolean) => btn.disabled = param
+
+
+  const setPlayerName = () => {
+    if (!setName.value) {
+      setName.style.color = 'red'
+      setName.value = 'Write your name'
+      toggleBtnEnabled(confirmName, true)
+      setTimeout(() => {
+        setName.value = ''
+        toggleBtnEnabled(confirmName, false)
+      }, 2000);
+      return
+    }
+    playerName.textContent = setName.value
+    setName.value = ''
+    playerBlock.style.justifyContent = 'center'
+    confirmName.remove()
+    setName.remove()
+  }
+
+    confirmName.addEventListener('click', setPlayerName)
 
     const upgrades:Upgrade[] = [
         {id: 1, name: 'Улучшить оперативную память', price: 3, incoming: 0.5, textUpd:'Память улучшена'},
@@ -72,7 +99,17 @@ document.addEventListener('DOMContentLoaded', () => {
   
     };
 
-    const toggleBtnEnabled = (btn:HTMLButtonElement, param:boolean) => btn.disabled = param
+    const textMessage = (text: string, color: string) => {
+      const mesageText = document.createElement('p')
+      mesageText.style.color = color
+      mesageText.textContent = text
+      curentUpdates.append(mesageText)
+      toggleBtnEnabled(buyUpgrade, true)
+      setTimeout(() => {
+          mesageText.remove() 
+          toggleBtnEnabled(buyUpgrade, false)
+      }, 2000);
+  }
 
     function renderUpgrade (upgrades: Upgrade[]) {
 
@@ -101,18 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleBtnEnabled(startTaimer, false)
     });
   
-
-    const textMessage = (text: string, color: string) => {
-        const mesageText = document.createElement('p')
-        mesageText.style.color = color
-        mesageText.textContent = text
-        curentUpdates.append(mesageText)
-        toggleBtnEnabled(buyUpgrade, true)
-        setTimeout(() => {
-            mesageText.remove() 
-            toggleBtnEnabled(buyUpgrade, false)
-        }, 2000);
-    }
 
     const createListUpd = (text:string, parent: Element) => {
         parent.innerHTML += `<p>${text}</p>`
